@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <title>MEVO: A Predictive Model</title>
+</head>
+<body>
+
+		<div class="col-md-8 bg-white pre-scrollable" id="data" style="height: 800px;width:66%;padding-top: 20px;">
+			<div id="table" class="table-editable">
+				<table class="table">
+				  <tr>
+					<th>month</th>
+					<th>day</th>
+					<th>year</th>
+					<th>respondents</th>
+					<th>female</th>
+					<th>male</th>
+					<th>when_buying</th>
+					<th>buying</th>
+					<th>leasing</th>
+					<th>undecided</th>
+					<th>no_thought</th>
+					<th>my_choice</th>
+					<th>shared_choice</th>
+					<th>their_choice</th>
+					<th>me_driving</th>
+					<th>spouse_driving</th>
+					<th>kid_driving</th>
+					<th>other_driving</th>
+					<th>last_90</th>
+					<th>last_5mos</th>
+					<th>last_9mos</th>
+					<th>last_year</th>
+					<th>just_now</th>
+					<th>recognizing</th>
+					<th>researching</th>
+					<th>comparing</th>
+					<th>almost_chosen</th>
+					<th>chosen</th>
+					<th>r_family</th>
+					<th>r_newsize</th>
+					<th>r_safety</th>
+					<th>r_newer</th>
+					<th>r_deal</th>
+					<th>r_leaseup</th>
+					<th>r_needcar</th>
+					<th>r_tech</th>
+					<th>r_fuel</th>
+					<th>r_reliable</th>
+					<th>r_accident</th>
+					<th>r_luxury</th>
+					<th>r_bettercar</th>
+					<th>r_status</th>
+					<th>subcompact</th>
+					<th>smallcar</th>
+					<th>midsize</th>
+					<th>minivan</th>
+					<th>small_suv</th>
+					<th>midsize_suv</th>
+					<th>large_suv</th>
+					<th>small_pickup</th>
+					<th>large_pickup</th>
+					<th>sports</th>
+					<th>luxury</th>
+					<th>lux_suv</th>
+					<th>ultra_lux</th>
+					<th>perf_lux</th>
+					<th>cnt_considered_calc</th>
+					<th>electric</th>
+					<th>autonomous</th>
+					<th>cnt_considered_self</th>
+					<th>last_bought90d</th>
+					<th>last_bought1y</th>
+					<th>last_bought3y</th>
+					<th>last_bought5y</th>
+					<th>last_bought_5y</th>
+					<th>last_boughtnever</th>
+					<th>never_mar</th>
+					<th>married</th>
+					<th>widowed</th>
+					<th>divorced</th>
+					<th>poor</th>
+					<th>middle</th>
+					<th>rich</th>
+					<th>1model</th>
+					<th>1_model</th>
+					<th>gdp</th>
+					<th>crude_oil</th>
+					<th>cpi</th>
+					<th>un_emp</th>
+					<th>actual</th>
+				  </tr>
+					{% for row_index in range(data['month']|count) %}
+						<tr>
+						  <td contenteditable='true'>{{ data['month'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['day'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['year'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['respondents'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['female'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['male'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['when_buying'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['buying'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['leasing'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['undecided'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['no_thought'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['my_choice'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['shared_choice'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['their_choice'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['me_driving'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['spouse_driving'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['kid_driving'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['other_driving'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_90'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_5mos'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_9mos'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_year'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['just_now'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['recognizing'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['researching'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['comparing'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['almost_chosen'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['chosen'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_family'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_newsize'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_safety'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_newer'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_deal'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_leaseup'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_needcar'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_tech'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_fuel'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_reliable'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_accident'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_luxury'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_bettercar'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['r_status'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['subcompact'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['smallcar'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['midsize'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['minivan'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['small_suv'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['midsize_suv'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['large_suv'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['small_pickup'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['large_pickup'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['sports'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['luxury'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['lux_suv'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['ultra_lux'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['perf_lux'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['cnt_considered_calc'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['electric'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['autonomous'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['cnt_considered_self'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_bought90d'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_bought1y'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_bought3y'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_bought5y'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_bought_5y'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['last_boughtnever'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['never_mar'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['married'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['widowed'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['divorced'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['poor'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['middle'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['rich'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['1model'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['1_model'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['gdp'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['crude_oil'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['cpi'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['un_emp'][row_index] }}</td>
+							<td contenteditable='true'>{{ data['actual'][row_index] }}</td>
+						</tr>
+					{% endfor %}
+				  <!-- This is our clonable table line -->
+				  <tr class="hide">
+					<td contenteditable="true">Untitled</td>
+					<td contenteditable="true">undefined</td>
+					<td>
+					  <span class="table-remove glyphicon glyphicon-remove"></span>
+					</td>
+					<td>
+					  <span class="table-up glyphicon glyphicon-arrow-up"></span>
+					  <span class="table-down glyphicon glyphicon-arrow-down"></span>
+					</td>
+				  </tr>
+				</table>
+			  </div>
+
+		</div>
+		<div class="col-md-4 pred bg-dark">
+			<img src="{{ url_for('static', filename=under) }}" width="100%">
+			<img src="{{ url_for('static', filename=pred) }}" width="100%">
+			<div class="Buttons" style="padding-top: 20px;padding-left: 10px">
+				<a href="/recalibrate"><button type="button" class='btn btn-primary'>Recalibrate</button></a>
+				<a href="/best"><button id=best type="button" class='btn btn-success'>Best Case</button></a>
+				<a href="/worst"><button type="button" class='btn btn-danger'>Worst Case</button></a>
+				<a href="{{url_for('index', status='composite')}}"><button id="export-btn" type="button" class='export-btn btn btn-warning'>Run Model</button></a>
+				<p id="export"></p>
+			</div> 
+		</div>
+
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+	
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+var $TABLE = $('#table');
+var $BTN = $('#export-btn');
+var $EXPORT = $('#export');
+
+$('.table-add').click(function () {
+  var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
+  $TABLE.find('table').append($clone);
+});
+
+$('.table-remove').click(function () {
+  $(this).parents('tr').detach();
+});
+
+$('.table-up').click(function () {
+  var $row = $(this).parents('tr');
+  if ($row.index() === 1) return; // Don't go above the header
+  $row.prev().before($row.get(0));
+});
+
+$('.table-down').click(function () {
+  var $row = $(this).parents('tr');
+  $row.next().after($row.get(0));
+});
+
+// A few jQuery helpers for exporting only
+jQuery.fn.pop = [].pop;
+jQuery.fn.shift = [].shift;
+
+$BTN.click(function () {
+  var $rows = $TABLE.find('tr:not(:hidden)');
+  var headers = [];
+  var data = [];
+  
+  // Get the headers (add special header logic here)
+  $($rows.shift()).find('th:not(:empty)').each(function () {
+    headers.push($(this).text().toLowerCase());
+  });
+  
+  // Turn all existing rows into a loopable array
+  $rows.each(function () {
+    var $td = $(this).find('td');
+    var h = {};
+    
+    // Use the headers from earlier to name our hash keys
+    headers.forEach(function (header, i) {
+      h[header] = $td.eq(i).text();   
+    });
+    
+    data.push(h);
+  });
+  
+  // Output the result
+  // $EXPORT.text(JSON.stringify(data));
+  $.ajax({
+	  type : 'POST',
+	  url : "{{url_for('index', status='composite')}}",
+	  contentType: 'application/json',
+	  data : JSON.stringify(data)
+  });
+});
+</script>
+</html>
+<!-- 
+$.post("/composite/", {
+  	data : data, 
+  	dataType : "html"
+  	}); -->

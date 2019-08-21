@@ -1,0 +1,23 @@
+html,body{
+  	height: 300px;
+}
+
+.col-md-8 {
+	min-height: 100%;
+}
+
+#data {
+	max-height: 800px;
+	height: 800px;
+	width: 100%;
+}
+
+@import "compass/css3";
+
+.table-editable {
+  position: relative;
+  
+  .glyphicon {
+    font-size: 20px;
+  }
+}
