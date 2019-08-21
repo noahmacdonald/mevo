@@ -1,0 +1,24 @@
+.table {       
+  position: absolute;
+  font-size: 150%;
+  width: 480px;
+  height: 200px;
+  z-index: 15;
+  top: 20%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: rgb(236, 240, 204);
+  }
+table {
+	  width: 100%;
+	  margin-left: 2%;
+	  margin-top: 2%;
+	  text-align: center;
+	  }
+.Buttons {
+  margin-top: 2%;
+  }
+h4 {
+  text-align: right;
+  margin-bottom: -1px;
+  }
